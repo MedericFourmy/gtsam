@@ -521,6 +521,19 @@ class ISAM2 {
                             const gtsam::Values& newTheta,
                             const gtsam::ISAM2UpdateParams& updateParams);
 
+  void marginalizeLeaves(const gtsam::FastList< gtsam::Key > &leafKeys);
+  //  
+  /**
+   * Compilation error:
+   * 
+   * error: static assertion failed: Holder classes are only supported for custom types
+  */
+  // void marginalizeLeaves(const gtsam::FastList< gtsam::Key > &leafKeys,
+  //                        gtsam::FactorIndices* marginalFactorsIndices);
+  // void marginalizeLeaves(const gtsam::FastList< gtsam::Key > &leafKeys,
+  //                        gtsam::FactorIndices* marginalFactorsIndices,
+  //                        gtsam::FactorIndices* deletedFactorsIndices);
+
   double error(const gtsam::VectorValues& values) const;
 
   gtsam::Values getLinearizationPoint() const;
